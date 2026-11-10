@@ -43,4 +43,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:  # noqa: BLE001 - diagnostics only: record the error where it can be read
+        import traceback
+        (ROOT / "reports").mkdir(exist_ok=True)
+        (ROOT / "reports" / "evds_discovery.md").write_text(
+            "# EVDS discovery failed\n\n```\n" + traceback.format_exc() + "\n```\n", encoding="utf-8")
+        raise
