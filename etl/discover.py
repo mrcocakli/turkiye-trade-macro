@@ -25,7 +25,7 @@ def main():
     words = sys.argv[1:] or ["TÜKETİCİ", "CONSUMER", "TÜFE", "CPI"]
     client = tcmb.Client(api_key=os.environ["EVDS_API_KEY"])
     out = [f"# EVDS discovery for: {', '.join(words)}", ""]
-    groups = client.get_datagroups_metadata()
+    groups = pd.DataFrame(client.get_datagroups_metadata())
     hit = groups[groups.apply(lambda r: matches(r, words), axis=1)]
     out += [f"{len(hit)} of {len(groups)} data groups matched. Columns: {list(groups.columns)}", ""]
     code_col = next((c for c in groups.columns if "DATAGROUP_CODE" in c.upper()), groups.columns[0])
