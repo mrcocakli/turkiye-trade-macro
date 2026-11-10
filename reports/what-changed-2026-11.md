@@ -16,4 +16,4 @@ Ranked by how unusual each move is against the series' own last 24 months.
 10. USD deposit rate, up to 3 months was unchanged at 2.70% in Sep 2026. It is up 0.7 pp on a year earlier. (0.0x its typical monthly move)
 11. CBRT weighted average funding cost was unchanged at 36.00% on 10 Nov 2026. It is down 3.5 pp on a year earlier. (0.0x its typical monthly move)
 
-Generated 2026-11-10T20:33:29+00:00 UTC by etl/narrative.py from db/macro.db. Rule-based text; no figures are typed by hand.
+Generated 2026-11-10T20:34:41+00:00 UTC by etl/narrative.py from db/macro.db. Rule-based text; no figures are typed by hand.
