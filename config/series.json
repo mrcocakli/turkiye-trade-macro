@@ -1,0 +1,24 @@
+{
+  "_comment": "One entry per series. Add a line here and the pipeline, SQL views, narrative and page pick it up. 'good_when' tells the narrative how to word a move: 'down' = a fall is favourable, 'up' = a rise is favourable, null = neutral. EVDS codes marked verified=false have not yet been confirmed against a live API response; the first automated run reports which ones loaded in reports/pipeline_status.md.",
+  "series": [
+    {"id": "usdtry", "source": "evds", "code": "TP.DK.USD.A.YTL", "name": "USD/TRY", "unit": "TRY per USD", "category": "FX", "agg": "last", "decimals": 2, "good_when": null, "verified": true},
+    {"id": "eurtry", "source": "evds", "code": "TP.DK.EUR.A.YTL", "name": "EUR/TRY", "unit": "TRY per EUR", "category": "FX", "agg": "last", "decimals": 2, "good_when": null, "verified": true},
+    {"id": "dep_try_3m", "source": "evds", "code": "TP.MT210AGS.TRY.MT02", "name": "TRY deposit rate, up to 3 months", "unit": "%", "category": "Rates", "agg": "last", "decimals": 2, "good_when": null, "verified": true},
+    {"id": "dep_usd_3m", "source": "evds", "code": "TP.MT210AGS.USD.MT02", "name": "USD deposit rate, up to 3 months", "unit": "%", "category": "Rates", "agg": "last", "decimals": 2, "good_when": null, "verified": true},
+    {"id": "loan_try_commercial", "source": "evds", "code": "TP.BKR.TRY.1", "name": "TRY commercial loan rate", "unit": "%", "category": "Rates", "agg": "last", "decimals": 2, "good_when": "down", "verified": true},
+    {"id": "factoring_try", "source": "evds", "code": "TP.FKF.TRY.1", "name": "TRY factoring rate", "unit": "%", "category": "Rates", "agg": "last", "decimals": 2, "good_when": "down", "verified": true},
+    {"id": "funding_cost", "source": "evds", "code": "TP.APIFON4", "name": "CBRT weighted average funding cost", "unit": "%", "category": "Rates", "agg": "last", "decimals": 2, "good_when": null, "verified": false},
+    {"id": "cpi_index", "source": "evds", "code": "TP.FG.J0", "name": "Consumer price index", "unit": "index", "category": "Prices", "agg": "last", "decimals": 1, "good_when": null, "derive_yoy": "cpi_yoy", "verified": false},
+    {"id": "exports_usd", "source": "evds", "code": "TP.IHRACATBEC.9999", "name": "Goods exports", "unit": "USD thousand", "category": "Trade", "agg": "sum", "decimals": 0, "good_when": "up", "verified": false},
+    {"id": "imports_usd", "source": "evds", "code": "TP.ITHALATBEC.9999", "name": "Goods imports", "unit": "USD thousand", "category": "Trade", "agg": "sum", "decimals": 0, "good_when": null, "verified": false},
+    {"id": "wb_gdp_growth", "source": "worldbank", "code": "NY.GDP.MKTP.KD.ZG", "name": "Real GDP growth (annual)", "unit": "%", "category": "Annual context", "agg": "last", "decimals": 1, "good_when": "up", "freq": "A", "verified": true},
+    {"id": "wb_current_account", "source": "worldbank", "code": "BN.CAB.XOKA.GD.ZS", "name": "Current account balance (annual)", "unit": "% of GDP", "category": "Annual context", "agg": "last", "decimals": 1, "good_when": "up", "freq": "A", "verified": true},
+    {"id": "wb_exports_gdp", "source": "worldbank", "code": "NE.EXP.GNFS.ZS", "name": "Exports of goods and services (annual)", "unit": "% of GDP", "category": "Annual context", "agg": "last", "decimals": 1, "good_when": "up", "freq": "A", "verified": true}
+  ],
+  "derived": [
+    {"id": "cpi_yoy", "name": "CPI inflation, year on year", "unit": "%", "category": "Prices", "decimals": 1, "good_when": "down", "formula": "yoy_pct", "of": "cpi_index"},
+    {"id": "trade_balance", "name": "Goods trade balance", "unit": "USD thousand", "category": "Trade", "decimals": 0, "good_when": "up", "formula": "diff", "of": ["exports_usd", "imports_usd"]},
+    {"id": "export_cover", "name": "Exports as a share of imports", "unit": "%", "category": "Trade", "decimals": 1, "good_when": "up", "formula": "ratio_pct", "of": ["exports_usd", "imports_usd"]},
+    {"id": "real_try_deposit", "name": "TRY deposit rate less CPI inflation", "unit": "pp", "category": "Rates", "decimals": 1, "good_when": null, "formula": "diff", "of": ["dep_try_3m", "cpi_yoy"]}
+  ]
+}
