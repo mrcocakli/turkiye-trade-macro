@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import ROOT, connect, init_db  # noqa: E402
 
 MARKER = "/*__DATA__*/null"
-REPO_URL = ""   # set to the GitHub URL once the repository exists
+REPO_URL = "https://github.com/mrcocakli/turkiye-trade-macro"   # set to the GitHub URL once the repository exists
 STATUS_TEXT = {"ok": "Loaded", "seeded": "Loaded (seed)", "failed": "Last pull failed", None: "Awaiting first run"}
 
 

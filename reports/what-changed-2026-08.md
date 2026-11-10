@@ -11,4 +11,4 @@ Ranked by how unusual each move is against the series' own last 24 months.
 5. TRY factoring rate rose 0.6 pp to 54.94% in Jun 2026. It is down 10.4 pp on a year earlier. (0.7x its typical monthly move)
 6. TRY deposit rate, up to 3 months rose 0.6 pp to 49.42% in Jun 2026. It is down 9.1 pp on a year earlier. (0.5x its typical monthly move)
 
-Generated 2026-11-10T19:45:03+00:00 UTC by etl/narrative.py from db/macro.db. Rule-based text; no figures are typed by hand.
+Generated 2026-11-10T20:11:10+00:00 UTC by etl/narrative.py from db/macro.db. Rule-based text; no figures are typed by hand.
