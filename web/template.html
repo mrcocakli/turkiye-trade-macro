@@ -124,10 +124,11 @@ function chart(s){
   return g + "</svg>";
 }
 function card(s){
-  const n = s.history.length, cur = s.history[n-1], prev = n > 1 ? s.history[n-2] : null, isPP = PP.has(s.unit);
+  const n = s.history.length, cur = s.history[n-1], prev = n > 1 ? s.history[n-2] : null;
+  const isPP = PP.has(s.unit) || Math.min(...s.history.map(p => p[1])) <= 0, cu = PP.has(s.unit) ? "pp" : s.unit;
   let chg = "";
   if (prev) { const c = isPP ? cur[1]-prev[1] : (cur[1]/prev[1]-1)*100;
-    chg = `<span class="${toneClass(c, s.good_when)}">${arrow(c)} ${Math.abs(c).toFixed(1)}${isPP ? " pp" : "%"}</span> vs ${s.freq === "A" ? prev[0].slice(0,4) : ml(prev[0])}`; }
+    chg = `<span class="${toneClass(c, s.good_when)}">${arrow(c)} ${Math.abs(c).toFixed(isPP && cu !== "pp" ? s.decimals : 1)}${isPP ? " " + cu : "%"}</span> vs ${s.freq === "A" ? prev[0].slice(0,4) : ml(prev[0])}`; }
   const asof = s.freq === "A" ? cur[0].slice(0,4) : (s.last_obs && s.daily ? dl(s.last_obs) : ml(cur[0]));
   return `<div class="card reveal"><div class="nm">${s.name}</div>
     <div class="val">${nf(cur[1], s.decimals)}<small>${s.unit === "%" ? "%" : " " + s.unit}</small></div>
@@ -143,7 +144,7 @@ function init(){
   $("changes").innerHTML = (N ? N.items : []).map((x,i) => { const s = byId[x.series_id];
     return `<li class="reveal"><span class="rank">${i+1}</span><div class="txt"><b>${x.name}</b><span>${x.sentence.replace(x.name + " ", "").replace(/^./, c => c.toUpperCase())}</span></div>
       ${spark(s.history.slice(-24), 132, 36)}
-      <div class="delta"><span class="${toneClass(x.change, s.good_when)}">${arrow(x.change)} ${Math.abs(x.change).toFixed(1)}${x.change_unit === "pp" ? " pp" : "%"}</span>
+      <div class="delta"><span class="${toneClass(x.change, s.good_when)}">${arrow(x.change)} ${Math.abs(x.change).toFixed(x.change_unit === "%" || x.change_unit === "pp" ? 1 : s.decimals)}${x.change_unit === "%" ? "%" : " " + x.change_unit}</span>
       <small>${x.z == null ? "short history" : x.z.toFixed(1) + "× typical"}</small></div></li>`; }).join("");
   const cats = [...new Set(S.map(s => s.category))];
   $("sections").innerHTML = cats.map((c,i) => `<section class="${i % 2 ? "alt" : ""}"><div class="wrap"><h2>${c}</h2>

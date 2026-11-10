@@ -51,6 +51,9 @@ def main():
     if n:
         body = json.loads(n["body_json"])
         narrative = {"edition": n["month"], "headline": n["headline"], "summary": body["summary"], "items": body["items"]}
+        for s in series:
+            if s["id"] in body.get("stale", []):
+                s["status"] = "Stale at source"
     data = {"generated": date.today().isoformat(), "repo": REPO_URL, "series": series, "narrative": narrative}
     html = (ROOT / "web" / "template.html").read_text(encoding="utf-8")
     if MARKER not in html:

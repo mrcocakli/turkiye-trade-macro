@@ -41,7 +41,7 @@ def main():
     for s in cfg["series"]:
         rows = conn.execute(AGG_SQL[s.get("agg", "last")], {"sid": s["id"]}).fetchall()
         conn.executemany("INSERT OR REPLACE INTO monthly_values VALUES (?,?,?)",
-                         [(s["id"], r["month"], r["value"]) for r in rows])
+                         [(s["id"], r["month"], r["value"] * s.get("scale", 1)) for r in rows])
 
     def get(sid):
         return dict(conn.execute("SELECT month, value FROM monthly_values WHERE series_id=?", (sid,)).fetchall())
