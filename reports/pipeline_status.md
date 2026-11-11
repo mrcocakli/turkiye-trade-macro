@@ -1,11 +1,11 @@
 # Pipeline status
 
-Last run started 2026-11-10T20:41:40+00:00 UTC: 13 series loaded, 0 failed.
+Last run started 2026-11-11T07:19:46+00:00 UTC: 13 series loaded, 0 failed.
 
 | Series | Source | Code | Status | Rows | Latest observation | Message |
 |---|---|---|---|---|---|---|
-| usdtry | evds | `TP.DK.USD.A.YTL` | ok | 683 | 2026-11-10 |  |
-| eurtry | evds | `TP.DK.EUR.A.YTL` | ok | 683 | 2026-11-10 |  |
+| usdtry | evds | `TP.DK.USD.A.YTL` | ok | 683 | 2026-11-11 |  |
+| eurtry | evds | `TP.DK.EUR.A.YTL` | ok | 683 | 2026-11-11 |  |
 | dep_try_3m | evds | `TP.MT210AGS.TRY.MT02` | ok | 81 | 2026-09-01 |  |
 | dep_usd_3m | evds | `TP.MT210AGS.USD.MT02` | ok | 81 | 2026-09-01 |  |
 | loan_try_commercial | evds | `TP.BKR.TRY.1` | ok | 81 | 2026-09-01 |  |
