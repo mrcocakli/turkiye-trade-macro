@@ -1,19 +1,24 @@
 # What changed: Nov 2026
 
-**EUR/TRY rose 1.5% by 11 Nov 2026.** Of 3 series with Nov 2026 data, 2 rose and 0 fell. 8 more are shown at their latest available month. 3 stopped updating at the source and are left out.
+**EUR/TRY rose 1.5% by 11 Nov 2026.** Of 3 series with Nov 2026 data, 2 rose and 0 fell. 13 more are shown at their latest available month.
 
 Ranked by how unusual each move is against the series' own last 24 months.
 
-1. TRY deposit rate, up to 3 months fell 2.7 pp to 44.24% in Sep 2026, a larger move than usual. It is down 6.2 pp on a year earlier. (2.4x its typical monthly move)
-2. Goods exports rose 10.7% to 25.97 USD bn in Sep 2026. It is up 15.3% on a year earlier. (1.2x its typical monthly move)
-3. EUR/TRY rose 1.5% to 56.28 on 11 Nov 2026. It is up 14.6% on a year earlier. (1.0x its typical monthly move)
-4. Goods imports rose 8.4% to 31.13 USD bn in Sep 2026. It is up 5.6% on a year earlier. (1.0x its typical monthly move)
-5. TRY commercial loan rate fell 0.4 pp to 46.44% in Sep 2026. It is down 2.8 pp on a year earlier. (0.8x its typical monthly move)
-6. TRY factoring rate fell 0.6 pp to 54.16% in Sep 2026. It is down 6.7 pp on a year earlier. (0.7x its typical monthly move)
-7. USD/TRY rose 0.8% to 50.11 on 11 Nov 2026. It is up 18.3% on a year earlier. (0.6x its typical monthly move)
-8. Exports as a share of imports rose 1.7 pp to 83.4% in Sep 2026. It is up 7.0 pp on a year earlier. (0.4x its typical monthly move)
-9. Goods trade balance rose 0.09 USD bn to -5.16 USD bn in Sep 2026. It is up 1.79 USD bn on a year earlier. (0.1x its typical monthly move)
-10. USD deposit rate, up to 3 months was unchanged at 2.70% in Sep 2026. It is up 0.7 pp on a year earlier. (0.0x its typical monthly move)
-11. CBRT weighted average funding cost was unchanged at 36.00% on 10 Nov 2026. It is down 3.5 pp on a year earlier. (0.0x its typical monthly move)
+1. CPI: clothing and footwear (2025=100) rose 12.6% to 126.2 in Oct 2026, an unusually large move for this series. It is up 13.4% on a year earlier. (3.2x its typical monthly move)
+2. TRY deposit rate, up to 3 months fell 2.7 pp to 44.24% in Sep 2026, a larger move than usual. It is down 6.2 pp on a year earlier. (2.4x its typical monthly move)
+3. Consumer price index (2003=100) rose 2.6% to 4,481.0 in Oct 2026. It is up 29.8% on a year earlier. (1.3x its typical monthly move)
+4. Goods exports rose 10.7% to 25.97 USD bn in Sep 2026. It is up 15.3% on a year earlier. (1.2x its typical monthly move)
+5. EUR/TRY rose 1.5% to 56.28 on 11 Nov 2026. It is up 14.6% on a year earlier. (1.0x its typical monthly move)
+6. Goods imports rose 8.4% to 31.13 USD bn in Sep 2026. It is up 5.6% on a year earlier. (1.0x its typical monthly move)
+7. TRY deposit rate less CPI inflation fell 0.9 pp to 14.5 pp in Sep 2026. It is down 2.6 pp on a year earlier. (0.8x its typical monthly move)
+8. TRY commercial loan rate fell 0.4 pp to 46.44% in Sep 2026. It is down 2.8 pp on a year earlier. (0.8x its typical monthly move)
+9. TRY factoring rate fell 0.6 pp to 54.16% in Sep 2026. It is down 6.7 pp on a year earlier. (0.7x its typical monthly move)
+10. USD/TRY rose 0.8% to 50.11 on 11 Nov 2026. It is up 18.3% on a year earlier. (0.6x its typical monthly move)
+11. Exports as a share of imports rose 1.7 pp to 83.4% in Sep 2026. It is up 7.0 pp on a year earlier. (0.4x its typical monthly move)
+12. Clothing and footwear inflation, year on year rose 0.2 pp to 13.4% in Oct 2026. It is up 5.4 pp on a year earlier. (0.1x its typical monthly move)
+13. Goods trade balance rose 0.09 USD bn to -5.16 USD bn in Sep 2026. It is up 1.79 USD bn on a year earlier. (0.1x its typical monthly move)
+14. CPI inflation, year on year was unchanged at 29.8% in Oct 2026. It is down 3.1 pp on a year earlier. (0.1x its typical monthly move)
+15. USD deposit rate, up to 3 months was unchanged at 2.70% in Sep 2026. It is up 0.7 pp on a year earlier. (0.0x its typical monthly move)
+16. CBRT weighted average funding cost was unchanged at 36.00% on 10 Nov 2026. It is down 3.5 pp on a year earlier. (0.0x its typical monthly move)
 
-Generated 2026-11-11T07:20:08+00:00 UTC by etl/narrative.py from db/macro.db. Rule-based text; no figures are typed by hand.
+Generated 2026-11-11T07:22:09+00:00 UTC by etl/narrative.py from db/macro.db. Rule-based text; no figures are typed by hand.
