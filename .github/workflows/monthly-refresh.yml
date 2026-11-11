@@ -38,12 +38,6 @@ jobs:
         env:
           EVDS_API_KEY: ${{ secrets.EVDS_API_KEY }}
         run: python run_pipeline.py
-      - name: List candidate CPI series (diagnostic, never fails the run)
-        if: always()
-        continue-on-error: true
-        env:
-          EVDS_API_KEY: ${{ secrets.EVDS_API_KEY }}
-        run: python etl/discover.py "TÜKETİCİ" "CONSUMER" "TÜFE"
       - name: Run checks
         run: python tests/test_pipeline.py
       - name: Commit refreshed data, narrative and page

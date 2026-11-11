@@ -88,14 +88,27 @@
     {
       "id": "cpi_index",
       "source": "evds",
-      "code": "TP.FG.J0",
-      "name": "Consumer price index",
+      "code": "TP.GENENDEKS.T1",
+      "name": "Consumer price index (2003=100)",
       "unit": "index",
       "category": "Prices",
       "agg": "last",
       "decimals": 1,
       "good_when": null,
       "derive_yoy": "cpi_yoy",
+      "verified": true
+    },
+    {
+      "id": "cpi_clothing",
+      "source": "evds",
+      "code": "TP.TUKFIY2025.03",
+      "name": "CPI: clothing and footwear (2025=100)",
+      "unit": "index",
+      "category": "Prices",
+      "agg": "last",
+      "decimals": 1,
+      "good_when": null,
+      "derive_yoy": "cpi_clothing_yoy",
       "verified": false
     },
     {
@@ -174,6 +187,16 @@
       "good_when": "down",
       "formula": "yoy_pct",
       "of": "cpi_index"
+    },
+    {
+      "id": "cpi_clothing_yoy",
+      "name": "Clothing and footwear inflation, year on year",
+      "unit": "%",
+      "category": "Prices",
+      "decimals": 1,
+      "good_when": "down",
+      "formula": "yoy_pct",
+      "of": "cpi_clothing"
     },
     {
       "id": "trade_balance",
