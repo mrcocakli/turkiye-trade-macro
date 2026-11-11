@@ -29,7 +29,14 @@ def main():
     hit = groups[groups.apply(lambda r: matches(r, words), axis=1)]
     out += [f"{len(hit)} of {len(groups)} data groups matched. Columns: {list(groups.columns)}", ""]
     code_col = next((c for c in groups.columns if "DATAGROUP_CODE" in c.upper()), groups.columns[0])
-    for _, g in hit.head(25).iterrows():
+    out += ["| Code | Name | Ends |", "|---|---|---|"]
+    out += [f"| {g[code_col]} | {g.get('DATAGROUP_NAME_ENG', '')} | {g.get('END_DATE', '')} |" for _, g in hit.iterrows()]
+    out.append("")
+    # Detail only for price-index groups that are still being updated this year.
+    this_year = str(pd.Timestamp.today().year)
+    live = hit[hit.apply(lambda g: "PRICE IND" in str(g.get("DATAGROUP_NAME_ENG", "")).upper()
+                         and str(g.get("END_DATE", "")).endswith(this_year), axis=1)]
+    for _, g in live.iterrows():
         out += [f"## {g[code_col]}", "", "```", g.to_string(), "```", ""]
         try:
             series = pd.DataFrame(client.get_series_metadata(datagroup=str(g[code_col])))
